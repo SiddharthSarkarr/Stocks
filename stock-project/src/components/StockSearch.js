@@ -7,7 +7,8 @@ const StockSearch = ({ setStockData, setSymbols }) => {
   const handleSubmit = async () => {
     const symbols = input.split(',').map(s => s.trim().toUpperCase());
     const res = await axios.post(
-      'http://localhost:5000/api/stocks/fetch',
+      //'http://localhost:5000/api/stocks/fetch',
+      'https://stocks-as5n.onrender.com/api/stocks/fetch',
       { symbols },
       {
         headers: { Authorization: 'Bearer login-token' },
@@ -32,3 +33,4 @@ const StockSearch = ({ setStockData, setSymbols }) => {
 };
 
 export default StockSearch;
+
